@@ -8,9 +8,15 @@ let sum = 4000000;
 let arr = [1, 2, 3];
 for (let i = 3; i <= 35; i++) {
     arr[i] = arr[i-1] + arr[i-2];
+    if (arr[i] >= sum) {
+        arr.pop()
+        break;
+    }
 }
-
-let result1 = 0;
-
-console.log(arr);
-console.log(result1);
+let result = 0;
+for (let i = arr.length; i > 0; i-- ) {
+    if(arr[i]%2 ==0) {
+        result += arr[i]
+    }
+}
+console.log("Sum of the even-valued terms (lower than 4 milion): "+ result);
